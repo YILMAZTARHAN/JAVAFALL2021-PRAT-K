@@ -5,13 +5,26 @@ import java.util.List;
 import java.util.Scanner;
 
 public class QFibonacci {
-     /*
-     KullanÄ±cÄ±dan alÄ±nan bir tamsayÄ±ya kadar FIBONACCI dizisi oluÅŸturun.
-     1-1-2-3-5-8-13-21-34....
-     */
+	  /*
+    Kullanýcýdan alýnan bir tamsayýya kadar FIBONACCI dizisi oluþturun.
+    1-1-2-3-5-8-13-21-34....
+    */
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
+       Scanner scan = new Scanner(System.in);
+       System.out.print("pozitif bir tamsayý giriniz : ");
+       int sayi = scan.nextInt();
 
-    }
+       List<Integer> fibo = new ArrayList<>();
+       fibo.add(1);
+       fibo.add(1);
+       System.out.println(fibo);
+
+       for (int i = 2; fibo.get(i - 2) + fibo.get(i - 1) < sayi; i++) {
+           fibo.add(fibo.get(i - 2) + fibo.get(i - 1));
+       }
+       System.out.println(fibo);
+
+   }
 }
